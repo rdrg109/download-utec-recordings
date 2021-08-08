@@ -1,0 +1,106 @@
+* Introduction
+
+This repository contains a Python script for downloading all the recordings from the current semester.
+
+* Executing the script
+:PROPERTIES:
+:CREATED: [2021-08-08 Sun 10:58]
+:END:
+
+Make sure that you have installed the required software.
+
+1. Create the =.env= file
+2. Go to the directory where you want the recordings to be saved.
+3. Execute the following command
+
+#+begin_src bash
+python download-utec-recordings.py
+#+end_src
+
+* Required software
+:PROPERTIES:
+:CREATED: [2021-08-07 Sat 19:54]
+:END:
+
+1. Python
+   + For executing the script
+
+2. The =zoomdl= binary
+   + Fow downloading the recordings
+
+3. A text editor
+   + For editing the =.env= file
+
+4. A web browser
+   + For obtaining the bearer token and the authorization token.
+   + For exporting the needed cookies for downloading a recording.
+
+* Instructions
+:PROPERTIES:
+:CREATED: [2021-08-07 Sat 19:52]
+:END:
+
+** Getting the authorization token and bearer token
+:PROPERTIES:
+:CREATED: [2021-08-08 Sun 10:40]
+:END:
+
+1. Open your web browser
+2. Visit https://conference.utec.edu.pe/consulta-alumno
+3. Open Developer Tools and visit the =Network= tab
+4. Search for a request that set =authorization: Bearer= and =x-auth-token= as headers
+
+** Creating the =cookies.txt= file
+:PROPERTIES:
+:CREATED: [2021-08-07 Sat 19:52]
+:END:
+
+This tutorial assumes that you are using Firefox.
+
+1. Open your web browser
+2. Visit the recording of a lecture which is login-protected
+3. Export the cookies that belong to the domain =zoom.us= in Netscape format. For doing this, you need an extension. In Firefox, you can use the extension [[https://addons.mozilla.org/es/firefox/addon/cookie-quick-manager/]["Cookie Quick Manager"]]
+4. Insert the =# Netscape HTTP Cookie File= line at the top of the file
+5. Prefix each URL in the file with =utec=
+
+Your =cookies.txt= file must look like as the following example.
+
+*WARNING* Don't copy the content of the example shown below because the values stored in this file are session-dependent.
+
+#+begin_src text
+# Netscape HTTP Cookie File
+utec.zoom.us	false	/	true	1688412378	_zm_mtk_guid	xyz
+utec.zoom.us	false	/	false	1656897331	wULrMv6t	xyz
+utec.zoom.us	false	/	true	0	_zm_page_auth	xyz
+utec.zoom.us	false	/	true	0	_zm_csp_script_nonce	xyz
+utec.zoom.us	false	/	true	1628405249	_zm_cdn_blocked	xyz
+utec.zoom.us	false	/	true	0	zm_cluster	xyz
+utec.zoom.us	false	/	true	0	zm_aid	xyz
+utec.zoom.us	false	/	true	0	zm_haid	xyz
+utec.zoom.us	false	/	true	1636159712	_zm_kms	xyz
+utec.zoom.us	false	/	true	0	_zm_ssid	xyz
+utec.zoom.us	false	/	true	1659919713	_zm_lang	xyz
+utec.zoom.us	false	/	true	0	_zm_date_format	xyz
+utec.zoom.us	false	/	true	1628470113	_zm_currency	xyz
+#+end_src
+
+** Creating the =.env= file
+:PROPERTIES:
+:CREATED: [2021-08-08 Sun 10:51]
+:END:
+
+For creating the =.env= file, you need to previously perform the following steps
+
++ Create the =cookies.txt= file
++ Get the authorization token and bearer token
+
+Your =.env= file must look like as the example shown below.
+
+*WARNING* Don't copy the content of =auth_token= and =bearer_token= in the example shown below because the values stored in this file are session-dependent.
+
+#+begin_src text
+cookies_file=/home/ilikecs/Downloads/cookies.txt
+email=john.doe@utec.edu.pe
+auth_token=eyJhbGciOiJIUzUxMiJ9.ex8wyCmfNUry9R8QVJEWmtyZVlAyaxdeGexLqNdIO4QcseQmXlcB6sC9suFjNr6K9Xx2aAyiMe4GUGfsBvljswNu9QKtzXVEHKKBQlHpOFh8GXlLfPYtYFVzcfM44QG7uWe3rEWDI31cYo9k2UlC87wIdvLECYEeUyJz2JpnjlelEmg4KvEo
+bearer_token=eyJhbGciOiJIUzI1NiJ9.1W6hHgeDECMoDdTrM9ba5r1P7TRFOYy8jxVc7klla6oAnrsenniG87UBa68pHappFp1UFc8KMqcvBVXJbjwSIReWvIro2x67ADpywr4B8aUvgZMRA2B8e373FD4iMcu2LXLdbVKEx1AyiN2wdBUbjTRyVc4t8fskpCBNeDr7IrSsHKpvWGFj
+#+end_src
