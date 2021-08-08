@@ -106,3 +106,13 @@ email=john.doe@utec.edu.pe
 auth_token=eyJhbGciOiJIUzUxMiJ9.ex8wyCmfNUry9R8QVJEWmtyZVlAyaxdeGexLqNdIO4QcseQmXlcB6sC9suFjNr6K9Xx2aAyiMe4GUGfsBvljswNu9QKtzXVEHKKBQlHpOFh8GXlLfPYtYFVzcfM44QG7uWe3rEWDI31cYo9k2UlC87wIdvLECYEeUyJz2JpnjlelEmg4KvEo
 bearer_token=eyJhbGciOiJIUzI1NiJ9.1W6hHgeDECMoDdTrM9ba5r1P7TRFOYy8jxVc7klla6oAnrsenniG87UBa68pHappFp1UFc8KMqcvBVXJbjwSIReWvIro2x67ADpywr4B8aUvgZMRA2B8e373FD4iMcu2LXLdbVKEx1AyiN2wdBUbjTRyVc4t8fskpCBNeDr7IrSsHKpvWGFj
 #+end_src
+* To do list
+:PROPERTIES:
+:CREATED: [2021-08-08 Sun 12:31]
+:END:
+
++ [ ] Solve =TODO= comments
++ [ ] Show more messages with the =logging= module.
++ [ ] Support flags
+  + [ ] Flag for downloading the recordings from a given course.
+  + [ ] Flag for downloading the recordings between a date range.
