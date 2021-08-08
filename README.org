@@ -1,6 +1,8 @@
 * Introduction
 
-This repository contains a Python script for downloading all the recordings from the current semester.
+This repository contains a Python script for downloading all the Zoom recordings of your courses from the semester 2021-1 at UTEC.
+
+The main goal is to encourage students to archive their recordings, beacuse the recordings are going to be deleted in some days (as stated by the IT department).
 
 * Executing the script
 :PROPERTIES:
