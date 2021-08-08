@@ -60,7 +60,7 @@ python download-utec-recordings.py
 This tutorial assumes that you are using Firefox.
 
 1. Open your web browser
-2. Visit the recording of a lecture which is login-protected
+2. Visit the recording of a lecture which is login-protected. [[https://utec.zoom.us/rec/play/UW80u9h9dLvMRn9CkSDCqM9LKsjvam1_96GJSXgELVEQvoljAGlkL7qylCHhRZVj-FDxxbR4eU2_MCak.CZyNbJUzQcf9jUE0][This]] is a lecture which is login-protected. It doesn't matter which lecture you open, but it has to be login-protected.
 3. Export the cookies that belong to the domain =zoom.us= in Netscape format. For doing this, you need an extension. In Firefox, you can use the extension [[https://addons.mozilla.org/es/firefox/addon/cookie-quick-manager/]["Cookie Quick Manager"]]
 4. Insert the =# Netscape HTTP Cookie File= line at the top of the file
 5. Prefix each URL in the file with =utec=
